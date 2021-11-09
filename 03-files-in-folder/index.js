@@ -11,3 +11,11 @@ fs.readdir('03-files-in-folder/secret-folder', (err, data) => {
         */
     });
 });
+
+fs.stat('03-files-in-folder/secret-folder/data.csv', (err, stats) => {
+    if (err) {
+        console.error(err);
+        return;
+    }
+    console.log(stats.isFile() + " - this file isn File");
+})
